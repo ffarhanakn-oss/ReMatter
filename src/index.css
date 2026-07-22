@@ -11,27 +11,45 @@
     min-height: 100vh;
     background-color: #f8fafc;
     color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 
   .dark body {
     background-color: #020617;
     color: #f8fafc;
   }
+
+  /* Global Focus Visible Ring for Accessibility */
+  *:focus-visible {
+    outline: 2px solid #10b981;
+    outline-offset: 2px;
+  }
 }
 
-/* Custom Glassmorphism & Micro-elevation styles like Stripe & Vercel */
+/* Custom Glassmorphism & Micro-elevation styles like Stripe, Linear & Vercel */
 .glass-panel {
   background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
 .dark .glass-panel {
   background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(30, 41, 59, 0.8);
+}
+
+/* Custom Card Elevate on Hover */
+.card-hover-effect {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-2px);
 }
 
 /* Scrollbar customization */
@@ -61,11 +79,11 @@
   background: #475569;
 }
 
-/* Subtle glow utilities */
+/* Glow & Accent utilities */
 .glow-emerald {
-  box-shadow: 0 0 20px -3px rgba(16, 185, 129, 0.25);
+  box-shadow: 0 0 24px -4px rgba(16, 185, 129, 0.3);
 }
 
 .glow-blue {
-  box-shadow: 0 0 20px -3px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 0 24px -4px rgba(37, 99, 235, 0.3);
 }
